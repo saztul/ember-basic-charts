@@ -1,0 +1,32 @@
+<div class=pie-chart-pie>
+  <svg width={{svgSize}} height={{svgSize}}>
+    <g transform={{coordinateShift}} class="chart-viewport">
+      {{#each pieSlices as |slice|}}
+        {{pie-chart/pie-slice
+          slice=slice
+          mouse-enter=(action 'showHover' slice)
+          mouse-leave=(action 'hideHover' slice)
+          click=(action 'pieClick' slice)
+        }}
+      {{else}}
+        {{pie-chart/empty-slice
+          pie=this
+        }}
+      {{/each}}
+    </g>
+  </svg>
+</div>
+<div class=pie-chart-legend>
+  <ul>
+    {{#each pieSlices as |slice|}}
+      {{pie-chart/pie-info
+        slice=slice
+        mouse-enter=(action 'showHover' slice)
+        mouse-leave=(action 'hideHover' slice)
+        click=(action 'textClick' slice)
+      }}
+    {{else}}
+      <p class=pie-chart-no-data>{{noDataMessage}}</p>
+    {{/each}}
+  </ul>
+</div>

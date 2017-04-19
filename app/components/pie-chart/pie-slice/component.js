@@ -1,0 +1,1 @@
+export { default } from 'ember-myhfc-charts/components/pie-chart/pie-slice/component';
