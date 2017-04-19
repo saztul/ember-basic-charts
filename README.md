@@ -1,4 +1,6 @@
+[![TravisCI Build Status](https://travis-ci.org/saztul/ember-basic-charts.svg?branch=master)](https://travis-ci.org/saztul/ember-basic-charts)
 [![Code Climate](https://codeclimate.com/github/saztul/ember-basic-charts/badges/gpa.svg)](https://codeclimate.com/github/saztul/ember-basic-charts)
+[![npm version](https://badge.fury.io/js/ember-basic-charts.svg)](https://badge.fury.io/js/ember-basic-charts)
 
 # ember-basic-charts
 
