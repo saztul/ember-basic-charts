@@ -1,7 +1,7 @@
 {
-  "name": "ember-myhfc-charts",
+  "name": "ember-basic-charts",
   "version": "0.0.0",
-  "description": "The default blueprint for ember-cli addons.",
+  "description": "Basic chart components for ember",
   "keywords": [
     "ember-addon"
   ],

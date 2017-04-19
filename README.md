@@ -1,11 +1,11 @@
-# ember-myhfc-charts
+# ember-basic-charts
 
 This README outlines the details of collaborating on this Ember addon.
 
 ## Installation
 
 * `git clone <repository-url>` this repository
-* `cd ember-myhfc-charts`
+* `cd ember-basic-charts`
 * `npm install`
 * `bower install`
 
