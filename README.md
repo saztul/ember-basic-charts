@@ -31,7 +31,7 @@ slices = [
   slices=slices
 }}
 ```
-![pie chart minimal](readme-assets/pie-simple.png "Minimal")
+![pie chart minimal](https://github.com/saztul/ember-basic-charts/raw/master/readme-assets/pie-simple.png "Minimal")
 
 #### All options
 ```hbs
@@ -49,7 +49,7 @@ slices = [
   seedColor="#d13f19"
 }}
 ```
-![pie chart all options](readme-assets/pie-all-opts.png "All options")
+![pie chart all options](https://github.com/saztul/ember-basic-charts/raw/master/readme-assets/pie-all-opts.png "All options")
 
 
 ## Installation
