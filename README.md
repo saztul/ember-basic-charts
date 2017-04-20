@@ -14,7 +14,9 @@ No dependecies apart from the default Ember packages.
 * [Value range chart](#value-range-chart)
 
 ### <a name=pie-chart></a>Pie Chart
+
 #### Data
+
 ```javascript
 slices = [
   { "label":"One",    "value":1 },
@@ -26,14 +28,17 @@ slices = [
 ```
 
 #### Minimal
+
 ```hbs
 {{pie-chart
   slices=slices
 }}
 ```
+
 ![pie chart minimal](https://github.com/saztul/ember-basic-charts/raw/master/readme-assets/pie-simple.png "Minimal")
 
 #### All options
+
 ```hbs
 {{pie-chart
   slices=slices
@@ -49,7 +54,65 @@ slices = [
   seedColor="#d13f19"
 }}
 ```
+
 ![pie chart all options](https://github.com/saztul/ember-basic-charts/raw/master/readme-assets/pie-all-opts.png "All options")
+
+### <a name=bar-chart></a>Bar Chart
+
+#### Data
+
+```javascript
+data: [
+  { position: 10, label: "Ten",       value: 5 },
+  { position: 13, label: "Thirteen",  value: 3 },
+  { position: 20, label: "Twenty",    value: 7 },
+]
+```
+
+#### Usage
+
+```hbs
+{{bar-chart
+  data=data
+}}
+```
+
+![bar chart](https://github.com/saztul/ember-basic-charts/raw/master/readme-assets/bar-chart.png "Bar chart")
+
+### <a name=value-range-chart></a>Value range chart
+
+#### Range
+
+```hbs
+{{value-range-chart
+  start=20
+  stop=70
+}}
+```
+
+![range](https://github.com/saztul/ember-basic-charts/raw/master/readme-assets/range.png "Range")
+
+#### Single line
+
+```hbs
+{{value-range-chart mid=30}}
+```
+
+![line](https://github.com/saztul/ember-basic-charts/raw/master/readme-assets/line.png "Line")
+
+#### Line and range with altered minimum and maximum
+
+```hbs
+{{value-range-chart
+  min=20
+  max=140
+  start=30
+  stop=120
+  mid=50
+}}
+```
+
+![range and line](https://github.com/saztul/ember-basic-charts/raw/master/readme-assets/range-and-line.png "Range and Line")
 
 
 ## Installation
