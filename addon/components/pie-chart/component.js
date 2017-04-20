@@ -14,7 +14,10 @@ const {
 
 export default Component.extend({
   layout,
-  classNames:     [ 'pie-chart' ],
+  classNames: [
+    'ember-basic-charts',
+    'pie-chart'
+  ],
   slicesMax:      10,
   hovering:       null,
   radius:         70,

@@ -7,7 +7,8 @@ moduleForComponent('pie-chart/pie-info', 'Integration | Component | pie chart/pi
 
 test('it renders', function(assert) {
   this.render(hbs`{{pie-chart/pie-info}}`);
-  assert.equal(this.$().text().trim(), '');
+  let html = this.$().html();
+  assert.ok(html.match(/<li .*pie-chart-pie-info/), 'renders as list element');
 });
 
 test('it displays the percentage', function(assert) {

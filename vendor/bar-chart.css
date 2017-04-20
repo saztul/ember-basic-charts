@@ -1,0 +1,89 @@
+.bar-chart {
+  position: relative;
+  width: 600px;
+  height: 200px;
+}
+.bar-chart .bar-chart-legend,
+.bar-chart .bar-chart-bars{
+  position: absolute;
+  top:0;
+  right:0;
+  bottom:0;
+  left: 0;
+}
+.bar-chart .bar-chart-chart-bar{
+  background: rgb(117, 140, 154);
+  position: absolute;
+  top:auto;
+  right:auto;
+  bottom:0;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.2), rgba(0, 0, 0, 0.2));
+  box-shadow: inset 0 0 2px 0px rgba(0, 0, 0, 0.1);
+}
+.bar-chart .bar-chart-value{
+  font-size: 10px;
+  display: block;
+  text-align: center;
+  line-height: 1.5;
+  color: rgb(117, 140, 154);
+  margin-top: -15px;
+}
+.bar-chart .bar-chart-gte-90 .bar-chart-value{
+  margin-top: 0px;
+  color: #fff;
+}
+.bar-chart .bar-chart-legend span{
+  color: rgb(117, 140, 154);
+  font-size: 10px;
+  position: absolute;
+  top:0;
+  display: block;
+  line-height: 20px;
+}
+
+.bar-chart .bar-chart-legend-left{
+  right: auto;
+  width: 30px;
+  bottom: 20px;
+  line-height: 10px;
+  text-align: right;
+}
+.bar-chart .bar-chart-legend-bottom{
+  top:auto;
+  left: 30px;
+  height: 20px;
+}
+.bar-chart .bar-chart-bars{
+    bottom:20px;
+    left: 30px;
+    border: 1px solid rgb(71, 88, 98);
+    border-width: 0 0 1px 1px;
+  }
+.bar-chart .bar-chart-legend .bar-chart-hover{
+  background: rgb(117, 140, 154);
+  color: #fff;
+  border-radius: 2px;
+  padding: 0px 4px;
+  margin: 2px 0;
+  line-height: 20px - 4px;
+}
+.bar-chart .bar-chart-legend .bar-chart-min-value{
+  bottom:0;
+  left: 0;
+  right: 4px;
+  top: auto;
+}
+.bar-chart .bar-chart-legend .bar-chart-max-value{
+  top: 0;
+  left: 0;
+  right: 4px;
+}
+.bar-chart .bar-chart-legend .bar-chart-start{
+  left:0;
+}
+.bar-chart .bar-chart-legend .bar-chart-end{
+  right: 0;
+}

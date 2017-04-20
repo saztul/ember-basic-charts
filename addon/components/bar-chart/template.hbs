@@ -1,0 +1,23 @@
+<div class="bar-chart-legend bar-chart-legend-left">
+  {{#if hasData}}
+    <span class=bar-chart-max-value>{{maxValue}}</span>
+    <span class=bar-chart-min-value>0</span>
+  {{/if}}
+</div>
+<div class="bar-chart-legend bar-chart-legend-bottom">
+  {{#if hasData}}
+    <span class=bar-chart-start>{{startPosition}}</span>
+    <span class=bar-chart-end>{{endPosition}}</span>
+    <span class=bar-chart-hover style={{hoverStyle}}>{{hoverInfo}}</span>
+  {{/if}}
+</div>
+<div class="bar-chart-bars">
+  {{#each data as |dataPoint|}}
+    {{bar-chart/chart-bar
+      chart=this
+      dataPoint=dataPoint
+      mouse-enter=(action 'showHover')
+      mouse-leave=(action 'hideHover')
+    }}
+  {{/each}}
+</div>
