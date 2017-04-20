@@ -9,6 +9,7 @@ const Router = Ember.Router.extend({
 Router.map(function() {
   this.route('pie-chart-demo');
   this.route('bar-chart-demo');
+  this.route('value-range-chart-demo');
 });
 
 export default Router;

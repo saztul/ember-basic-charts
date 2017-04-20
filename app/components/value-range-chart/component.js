@@ -1,0 +1,1 @@
+export { default } from 'ember-basic-charts/components/value-range-chart/component';

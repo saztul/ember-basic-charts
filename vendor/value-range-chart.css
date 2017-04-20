@@ -1,0 +1,92 @@
+.value-range-chart{
+  display: block;
+  position: relative;
+  width: 180px;
+  margin: 0 0 8px 0;
+  height: 38px;
+  font-size: 12px;
+  line-height: 18px;
+}
+
+.value-range-chart .value-range-chart-scale,
+.value-range-chart .value-range-chart-label{
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  line-height: 20px;
+}
+
+.value-range-chart .value-range-chart-scale{
+  height: 20px;
+  right: 28px;
+  left: 28px;
+  background: #eee;
+}
+
+.value-range-chart .value-range-chart-label{
+  right: auto;
+  left: auto;
+  padding: 0 4px;
+  width: 20px;
+}
+
+.value-range-chart .value-range-chart-left-label{
+  margin-left: -20px;
+  text-align: right;
+}
+
+.value-range-chart .value-range-chart-minimum-label{
+  text-align:right;
+  left:  0;
+}
+
+.value-range-chart .value-range-chart-maximum-label{
+  right: 0;
+}
+
+.value-range-chart .value-range-chart-minimum-label,
+.value-range-chart .value-range-chart-maximum-label{
+  color: #aaa;
+  line-height: 20px;
+}
+
+.value-range-chart .value-range-chart-range{
+  position: absolute;
+  top: 0;
+  right: auto;
+  bottom: 0;
+  left: auto;
+  background: #f0bfb2;
+  background-image: linear-gradient(90deg, #f0bfb2, #dd7256, #f0bfb2, 0%);
+}
+
+.value-range-chart .value-range-chart-start,
+.value-range-chart .value-range-chart-stop{
+  position: absolute;
+  left: auto;
+  right: auto;
+  top: 19px;
+  color: #d75938;
+  width: 20px;
+}
+
+.value-range-chart .value-range-chart-start{
+  left: 0;
+  margin-left: -20px;
+  text-align: right;
+}
+
+.value-range-chart .value-range-chart-stop{
+  right: 0;
+  margin-right: -20px;
+}
+
+.value-range-chart .value-range-chart-line{
+  position: absolute;
+  top: 0;
+  right: auto;
+  bottom: 0;
+  border-left: 1px solid #d75938;
+  left: auto;
+  color: #d75938;
+}

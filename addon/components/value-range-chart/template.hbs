@@ -1,0 +1,21 @@
+<div class="value-range-chart-minimum-label value-range-chart-label">
+  <div class=value-range-chart-possible>{{minimum}}</div>
+</div>
+<div class=value-range-chart-scale>
+  {{#if hasRange}}
+    <div class=value-range-chart-range style={{rangeStyle}}>
+      <div class=value-range-chart-start>{{start}}</div>
+      <div class=value-range-chart-stop>{{stop}}</div>
+    </div>
+  {{/if}}
+  {{#if hasMid}}
+    <div class=value-range-chart-line style={{lineStyle}}>
+      <div class="value-range-chart-mid-label value-range-chart-label {{midLabelClass}}">
+        {{mid}}
+      </div>
+    </div>
+  {{/if}}
+</div>
+<div class="value-range-chart-maximum-label value-range-chart-label">
+  <div class=value-range-chart-possible>{{maximum}}</div>
+</div>
