@@ -9,6 +9,6 @@ export default Ember.Controller.extend({
     { "label":"Two",    "value":2 },
     { "label":"Three",  "value":3 },
     { "label":"Four",   "value":4 },
-    { "label":"Five",   "value":5 }
+    { "label":"Five",   "value":5, "color": '#006' }
   ],
 });

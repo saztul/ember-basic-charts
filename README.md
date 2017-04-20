@@ -4,7 +4,53 @@
 
 # ember-basic-charts
 
-This README outlines the details of collaborating on this Ember addon.
+A collection of charts written for and in Ember.
+No dependecies apart from the default Ember packages.
+
+## Included charts
+
+* [Pie chart](#pie-chart)
+* [Bar chart](#bar-chart)
+* [Value range chart](#value-range-chart)
+
+### <a name=pie-chart></a>Pie Chart
+#### Data
+```javascript
+slices = [
+  { "label":"One",    "value":1 },
+  { "label":"Two",    "value":2 },
+  { "label":"Three",  "value":3 },
+  { "label":"Four",   "value":4 },
+  { "label":"Five",   "value":5, "color": '#006' }
+]
+```
+
+#### Minimal
+```hbs
+{{pie-chart
+  slices=slices
+}}
+```
+![pie chart minimal](readme-assets/pie-simple.png "Minimal")
+
+#### All options
+```hbs
+{{pie-chart
+  slices=slices
+  slicesMax=4
+  radius=70
+  tilt=315
+  borderColor="rgba(255,255,255,0.5)"
+  bumpBy=5
+  otherLabel="Other"
+  otherColor="#dddddd"
+  emptyColor="#eeeeee"
+  noDataMessage="No data"
+  seedColor="#d13f19"
+}}
+```
+![pie chart all options](readme-assets/pie-all-opts.png "All options")
+
 
 ## Installation
 
