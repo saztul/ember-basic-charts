@@ -1,6 +1,6 @@
 {
   "name": "ember-basic-charts",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Basic chart components for ember",
   "keywords": [
     "ember-addon"
