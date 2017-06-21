@@ -20,6 +20,20 @@ test('it has left legend', function(assert) {
   assert.equal(this.$('.bar-chart-min-value').text(), '0', 'min-value');
 });
 
+test('it handles string data in left legend', function(assert) {
+  this.set('data', [ { value: '1' }, { value: '5' } ]);
+  this.render(hbs`{{bar-chart data=data}}`);
+  assert.equal(this.$('.bar-chart-max-value').text(), '5', 'max-value');
+  assert.equal(this.$('.bar-chart-min-value').text(), '0', 'min-value');
+});
+
+test('it handles string data in bottom legend', function(assert) {
+  this.set('data', [ { position: '9' }, { position: '16' } ]);
+  this.render(hbs`{{bar-chart data=data}}`);
+  assert.equal(this.$('.bar-chart-start').text(),  '9', 'start');
+  assert.equal(this.$('.bar-chart-end').text(),   '16', 'end');
+});
+
 test('it has bottom legend', function(assert) {
   this.set('data', [ { position: 9 }, { position: 16 } ]);
   this.render(hbs`{{bar-chart data=data}}`);

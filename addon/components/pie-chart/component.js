@@ -5,7 +5,7 @@ import layout from './template';
 const {
   A,
   computed,
-  computed: { mapBy, max, sort, sum },
+  computed: { max, sort, sum, map },
   String: { htmlSafe },
   get,
   set,
@@ -33,9 +33,12 @@ export default Component.extend({
   slices:       A(),
   sortDef:      A([ 'value:desc' ]),
   sortedSlices: sort('slices', 'sortDef'),
-  sliceValues:  mapBy('slices', 'value'),
   maxValue:     max('sliceValues'),
   pieValue:     sum('sliceValues'),
+  sliceValues:  map('slices', function(slice) {
+    // Force number if a string is given for value
+    return +get(slice, 'value');
+  }),
 
   coordinateShift: computed(
     'radius',

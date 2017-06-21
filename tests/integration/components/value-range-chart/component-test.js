@@ -30,6 +30,13 @@ test('range bar', function(assert) {
   assert.ok(style.match(/right:\s*30%/), 'right');
 });
 
+test('it can handle string data', function(assert) {
+  this.render(hbs`{{value-range-chart start='20' stop='70'}}`);
+  let style = this.$('.value-range-chart-range').attr('style');
+  assert.ok(style.match(/left:\s*20%/),  'left');
+  assert.ok(style.match(/right:\s*30%/), 'right');
+});
+
 test('rmid line label', function(assert) {
   this.render(hbs`{{value-range-chart mid=60}}`);
   assert.equal(this.$('.value-range-chart-mid-label').text().trim(), '60', 'mid-value');

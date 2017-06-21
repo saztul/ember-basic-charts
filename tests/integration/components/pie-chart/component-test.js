@@ -52,6 +52,32 @@ test('it renders with a multiple data points', function(assert) {
   assert.equal(this.$('.pie-chart-slice').length, 4);
 });
 
+// multi entry with string data
+test('it renders with multiple data points stringified', function(assert) {
+  this.set('data', [
+    { value: '11', label: 'One' },
+    { value: '22', label: 'Two' },
+    { value: '33', label: 'Three' },
+    { value: '44', label: 'Four' }
+  ]);
+  this.render(hbs`{{pie-chart slices=data}}`);
+  let text = this.$().text().trim();
+  assert.ok(text.match(/One/),    'label');
+  assert.ok(text.match(/Two/),    'label');
+  assert.ok(text.match(/Three/),  'label');
+  assert.ok(text.match(/Four/),   'label');
+  assert.ok(text.match(/11/),     'value');
+  assert.ok(text.match(/22/),     'value');
+  assert.ok(text.match(/33/),     'value');
+  assert.ok(text.match(/44/),     'value');
+  assert.ok(text.match(/10%/),    'percentage');
+  assert.ok(text.match(/20%/),    'percentage');
+  assert.ok(text.match(/30%/),    'percentage');
+  assert.ok(text.match(/40%/),    'percentage');
+
+  assert.equal(this.$('.pie-chart-slice').length, 4);
+});
+
 // limited multi entry
 test('it renders with a limited set of multiple data points', function(assert) {
   this.set('data', [
