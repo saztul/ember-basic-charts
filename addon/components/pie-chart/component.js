@@ -5,7 +5,7 @@ import layout from './template';
 const {
   A,
   computed,
-  computed: { max, sort, sum, map },
+  computed: { max, sort, sum, map, mapBy },
   String: { htmlSafe },
   get,
   set,
@@ -31,13 +31,14 @@ export default Component.extend({
   seedColor:      "#d13f19",
 
   slices:       A(),
-  sortDef:      A([ 'value:desc' ]),
-  sortedSlices: sort('slices', 'sortDef'),
+  sortedSlices: sort('normalizedSlices', 'sortDef'),
   maxValue:     max('sliceValues'),
   pieValue:     sum('sliceValues'),
-  sliceValues:  map('slices', function(slice) {
-    // Force number if a string is given for value
-    return +get(slice, 'value');
+  sliceValues:  mapBy('normalizedSlices', 'value'),
+  sortDef:      A([ 'value:desc' ]),
+  normalizedSlices: map('slices', function(slice) {
+    slice.value = +slice.value;
+    return slice;
   }),
 
   coordinateShift: computed(
