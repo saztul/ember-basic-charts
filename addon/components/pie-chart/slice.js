@@ -35,7 +35,7 @@ export default Ember.Object.extend({
         sliceNr       = +get(this, 'sliceNr') + 1,
         sliceCount    = +get(this, 'sliceCount') + 1,
         shadeBy       = 0.8 / sliceCount * sliceNr,
-        colorRx       = /(#(?:[0-9a-f]{2}){2,4}|#[0-9a-f]{3}|(?:rgba?|hsla?)\((?:\d+%?(?:deg|rad|grad|turn)?(?:,|\s)+){2,3}[\s\/]*[\d\.]+%?\))/i;
+        colorRx       = /(#(?:[0-9a-f]{2}){2,4}|#[0-9a-f]{3}|(?:rgba?|hsla?)\((?:\d+%?(?:deg|rad|grad|turn)?(?:,|\s)+){2,3}[\s/]*[\d.]+%?\))/i;
         // color regex
         // @see https://gist.github.com/olmokramer/82ccce673f86db7cda5e
       if(!color || !`${color}`.match(colorRx)){

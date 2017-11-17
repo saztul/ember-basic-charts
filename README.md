@@ -120,7 +120,6 @@ data: [
 * `git clone <repository-url>` this repository
 * `cd ember-basic-charts`
 * `npm install`
-* `bower install`
 
 ## Running
 
