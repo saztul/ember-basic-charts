@@ -16,4 +16,12 @@ export default ObjectProxy.extend({
       return isNaN(value) ? 0 : value;
     }
   ),
+
+  position: computed(
+    'content.position',
+    function() {
+      let position = +get(this, 'content.position');
+      return isNaN(position) ? 1 : position;
+    }
+  )
 });

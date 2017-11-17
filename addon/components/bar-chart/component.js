@@ -1,10 +1,11 @@
 import Ember from 'ember';
 import layout from './template';
+import DataNormalizer  from './data-normalizer';
 
 const {
   A,
   computed,
-  computed: { readOnly, mapBy, min , max, sort, gt },
+  computed: { readOnly, mapBy, min , max, sort, gt, map },
   String: { htmlSafe },
   get,
   set,
@@ -22,9 +23,9 @@ export default Component.extend({
   data:           A(),
   sortDef:        A([ 'position:asc' ]),
 
-  sortedData:     sort('data', 'sortDef'),
-  dataPositions:  mapBy('data', 'position'),
-  dataValues:     mapBy('data', 'value'),
+  sortedData:     sort('normalizedData', 'sortDef'),
+  dataPositions:  mapBy('normalizedData', 'position'),
+  dataValues:     mapBy('normalizedData', 'value'),
   chartStartsAt:  min('dataPositions'),
   chartEndsAt:    max('dataPositions'),
   maxValue:       max('dataValues'),
@@ -33,6 +34,13 @@ export default Component.extend({
   hoverInfo:      readOnly('hovering.label'),
   startPosition:  readOnly('chartStartsAt'),
   endPosition:    readOnly('chartEndsAt'),
+
+  normalizedData: map(
+    'data',
+    function(bar) {
+      return DataNormalizer.create({ content: bar });
+    }
+  ),
 
   hoverStyle: computed(
     'hovering.hoverStyle',
