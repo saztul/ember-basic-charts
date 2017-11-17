@@ -26,6 +26,14 @@ test('it renders with a single data point', function(assert) {
   assert.ok(html.match(/a 10,10 0 1,1 -20,0/), 'draws negative circle half');
 });
 
+test('it does not modify data values', function(assert){
+  let dataPoint = { value: '5', label:"Five" };
+  this.set('data', [ dataPoint ]);
+  this.render(hbs`{{pie-chart slices=data radius=10}}`);
+  assert.equal(typeof dataPoint.value, 'string');
+  assert.strictEqual(dataPoint.value, '5');
+});
+
 // multi entry
 test('it renders with a multiple data points', function(assert) {
   this.set('data', [

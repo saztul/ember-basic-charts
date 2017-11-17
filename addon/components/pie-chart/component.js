@@ -1,5 +1,6 @@
 import Ember  from 'ember';
 import Slice  from './slice';
+import DataNormalizer  from './data-normalizer';
 import layout from './template';
 
 const {
@@ -36,10 +37,13 @@ export default Component.extend({
   pieValue:     sum('sliceValues'),
   sliceValues:  mapBy('normalizedSlices', 'value'),
   sortDef:      A([ 'value:desc' ]),
-  normalizedSlices: map('slices', function(slice) {
-    slice.value = +slice.value;
-    return slice;
-  }),
+
+  normalizedSlices: map(
+    'slices',
+    function(slice) {
+      return DataNormalizer.create({ content: slice });
+    }
+  ),
 
   coordinateShift: computed(
     'radius',
