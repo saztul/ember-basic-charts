@@ -1,9 +1,5 @@
-import Ember from 'ember';
+import { readOnly } from '@ember/object/computed';
 import PieSlice from '../pie-slice/component';
-
-const {
-  computed: { readOnly }
-} = Ember;
 
 export default PieSlice.extend({
   startAngle: 0.0,

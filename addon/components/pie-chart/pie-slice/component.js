@@ -1,12 +1,7 @@
-import Ember from 'ember';
-
-const {
-  get,
-  computed,
-  computed: { readOnly },
-  String: { htmlSafe },
-  Component
-} = Ember;
+import { computed, get } from '@ember/object';
+import { readOnly } from '@ember/object/computed';
+import { htmlSafe } from '@ember/string';
+import Component from '@ember/component';
 
 export default Component.extend({
   slice:              null,

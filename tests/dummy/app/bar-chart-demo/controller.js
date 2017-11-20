@@ -1,6 +1,6 @@
-import Ember from 'ember';
+import Controller from '@ember/controller';
 
-export default Ember.Controller.extend({
+export default Controller.extend({
   smallBarData: [
     { position: 10, label: "Ten",       value: 5 },
     { position: 13, label: "Thirteen",  value: 3 },

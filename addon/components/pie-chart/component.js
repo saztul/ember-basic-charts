@@ -1,17 +1,11 @@
-import Ember  from 'ember';
+import { A } from '@ember/array';
+import { mapBy, map, sum, sort, max } from '@ember/object/computed';
+import { htmlSafe } from '@ember/string';
+import { set, get, computed } from '@ember/object';
+import Component from '@ember/component';
 import Slice  from './slice';
 import DataNormalizer  from './data-normalizer';
 import layout from './template';
-
-const {
-  A,
-  computed,
-  computed: { max, sort, sum, map, mapBy },
-  String: { htmlSafe },
-  get,
-  set,
-  Component
-} = Ember;
 
 export default Component.extend({
   layout,

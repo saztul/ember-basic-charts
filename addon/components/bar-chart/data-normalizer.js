@@ -1,10 +1,5 @@
-import Ember  from 'ember';
-
-const {
-  computed,
-  get,
-  ObjectProxy
-} = Ember;
+import { get, computed } from '@ember/object';
+import ObjectProxy from '@ember/object/proxy';
 
 export default ObjectProxy.extend({
   content: null,

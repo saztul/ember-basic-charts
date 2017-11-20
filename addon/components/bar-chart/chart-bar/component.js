@@ -1,13 +1,8 @@
-import Ember from 'ember';
+import Component from '@ember/component';
+import { computed, get } from '@ember/object';
+import { readOnly } from '@ember/object/computed';
+import { htmlSafe } from '@ember/string';
 import layout from './template';
-
-const {
-  get,
-  Component,
-  computed,
-  computed: { readOnly },
-  String: { htmlSafe }
-} = Ember;
 
 export default Component.extend({
   layout,

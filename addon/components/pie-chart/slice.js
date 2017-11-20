@@ -1,12 +1,7 @@
-import Ember from 'ember';
+import { readOnly } from '@ember/object/computed';
+import EmberObject, { get, computed } from '@ember/object';
 
-const {
-  computed,
-  computed: { readOnly },
-  get
-} = Ember;
-
-export default Ember.Object.extend({
+export default EmberObject.extend({
   label:        '',
   color:        '',
   beforeValue:  0,

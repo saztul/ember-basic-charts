@@ -1,13 +1,8 @@
-import Ember from 'ember';
+import { alias } from '@ember/object/computed';
+import { get, computed } from '@ember/object';
+import { htmlSafe } from '@ember/string';
+import Component from '@ember/component';
 import layout from './template';
-
-const {
-  computed,
-  computed: { alias },
-  get,
-  String: { htmlSafe },
-  Component
-} = Ember;
 
 export default Component.extend({
   layout,
