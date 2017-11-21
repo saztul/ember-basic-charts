@@ -30,8 +30,8 @@ export default Component.extend({
     'maxValue',
     'value',
     function(){
-      let maxValue  = getWithDefault(this, 'maxValue', 0),
-        value       = getWithDefault(this, 'value', 0),
+      let maxValue  = getWithDefault(this, 'maxValue', 0) || 0,
+        value       = getWithDefault(this, 'value', 0) || 0,
         percent     = 100.0 / maxValue * value,
         cn          = [ ];
       for(let i = 10; i <= 100; i += 10){
@@ -58,10 +58,10 @@ export default Component.extend({
     'maxValue',
     'value',
     function(){
-      let orderNr = parseFloat(getWithDefault(this, 'orderNr', 0)),
-        width     = parseFloat(getWithDefault(this, 'width', 0)),
-        maxValue  = parseFloat(getWithDefault(this, 'maxValue', 0)),
-        value     = parseFloat(getWithDefault(this, 'value', 0)),
+      let orderNr = parseFloat(getWithDefault(this, 'orderNr', 0)) || 0,
+        width     = parseFloat(getWithDefault(this, 'width', 0)) || 0,
+        maxValue  = parseFloat(getWithDefault(this, 'maxValue', 0)) || 0,
+        value     = parseFloat(getWithDefault(this, 'value', 0)) || 0,
         position  = orderNr * width,
         height    = 100.0 / maxValue * value;
       return htmlSafe(`width: ${width}%; height: ${height}%; left: ${position}%`);
@@ -72,8 +72,8 @@ export default Component.extend({
     'orderNr',
     'width',
     function(){
-      let orderNr = parseFloat(getWithDefault(this, 'orderNr', 0)),
-        width     = parseFloat(getWithDefault(this, 'width', 0)),
+      let orderNr = parseFloat(getWithDefault(this, 'orderNr', 0)) || 0,
+        width     = parseFloat(getWithDefault(this, 'width', 0)) || 0,
         position  = orderNr * width;
       return htmlSafe(position < 50 ? `left: ${position}%` : `right: ${100 - position - width}%`);
     }

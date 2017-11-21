@@ -88,6 +88,13 @@ test('it computes bar height (0%)', function(assert) {
   assert.ok(this.$().html().match(/height:\s*0%;/), '0%');
 });
 
+test('it computes bar height (0%)', function(assert) {
+  this.set('chart', { maxValue: 10 });
+  this.set('dataPoint', { value: 'bad' });
+  this.render(hbs`{{bar-chart/chart-bar chart=chart dataPoint=dataPoint}}`);
+  assert.ok(this.$().html().match(/height:\s*0%;/), '0%');
+});
+
 test('it computes bar height (33%)', function(assert) {
   this.set('chart', { maxValue: 10 });
   this.set('dataPoint', { value: 10.0/3.0 });
