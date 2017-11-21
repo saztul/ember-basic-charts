@@ -63,7 +63,7 @@ export default Component.extend({
         maxValue  = parseFloat(getWithDefault(this, 'maxValue', 0)) || 0,
         value     = parseFloat(getWithDefault(this, 'value', 0)) || 0,
         position  = orderNr * width,
-        height    = 100.0 / maxValue * value;
+        height    = maxValue === 0 ? 0 : 100.0 / maxValue * value;
       return htmlSafe(`width: ${width}%; height: ${height}%; left: ${position}%`);
     }
   ),
