@@ -1,5 +1,5 @@
 import Component from '@ember/component';
-import { computed, get } from '@ember/object';
+import { computed, get, getWithDefault } from '@ember/object';
 import { readOnly } from '@ember/object/computed';
 import { htmlSafe } from '@ember/string';
 import layout from './template';
@@ -30,8 +30,8 @@ export default Component.extend({
     'maxValue',
     'value',
     function(){
-      let maxValue  = get(this, 'maxValue'),
-        value       = get(this, 'value'),
+      let maxValue  = getWithDefault(this, 'maxValue', 0),
+        value       = getWithDefault(this, 'value', 0),
         percent     = 100.0 / maxValue * value,
         cn          = [ ];
       for(let i = 10; i <= 100; i += 10){
@@ -58,10 +58,10 @@ export default Component.extend({
     'maxValue',
     'value',
     function(){
-      let orderNr = parseFloat(get(this, 'orderNr')),
-        width     = parseFloat(get(this, 'width')),
-        maxValue  = parseFloat(get(this, 'maxValue')),
-        value     = parseFloat(get(this, 'value')),
+      let orderNr = parseFloat(getWithDefault(this, 'orderNr', 0)),
+        width     = parseFloat(getWithDefault(this, 'width', 0)),
+        maxValue  = parseFloat(getWithDefault(this, 'maxValue', 0)),
+        value     = parseFloat(getWithDefault(this, 'value', 0)),
         position  = orderNr * width,
         height    = 100.0 / maxValue * value;
       return htmlSafe(`width: ${width}%; height: ${height}%; left: ${position}%`);
@@ -72,8 +72,8 @@ export default Component.extend({
     'orderNr',
     'width',
     function(){
-      let orderNr = parseFloat(get(this, 'orderNr')),
-        width     = parseFloat(get(this, 'width')),
+      let orderNr = parseFloat(getWithDefault(this, 'orderNr', 0)),
+        width     = parseFloat(getWithDefault(this, 'width', 0)),
         position  = orderNr * width;
       return htmlSafe(position < 50 ? `left: ${position}%` : `right: ${100 - position - width}%`);
     }
